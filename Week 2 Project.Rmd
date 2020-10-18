@@ -1,0 +1,51 @@
+---
+title: "Developing Data Product Week 2 Project"
+author: "Sunil Samson S"
+date: "10/18/2020"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment="#/>")
+```
+
+
+## Overview 
+The aim of this project is to create a web page using R Markdown that contains a map made with leaflet pakage which shows cities with highest population in India.
+
+## Source of Information 
+A part of the data was collected from wikipedia and the latitude & longitude data was taken from Google Maps.
+
+## Installing the packages
+```{r}
+#install.packages("leaflet") This is a comment as the package is already installed.
+```
+
+## Cities with highest population in India.
+#### Adding Markers
+```{r}
+library(leaflet)
+my_map <- leaflet() %>% addTiles()
+
+my_map <- my_map %>%
+addMarkers(lat=17.387140, lng=78.491684, popup = "Hyderabad, India")
+
+my_map <- my_map %>%
+  addMarkers(lat=18.987807, lng=72.836447, popup = "Mumbai, India")
+
+my_map <- my_map %>%
+addMarkers(lat=	22.562627, lng=	88.363044, popup = "Kolkata, India") 
+
+my_map <- my_map %>%
+  addMarkers(lat=13.084622, lng= 80.248357, popup = "Chennai, India")
+
+my_map <- my_map %>%
+addMarkers(lat=12.977063, lng=	77.587106, popup = "Bengaluru, India")  
+
+my_map <- my_map %>%
+addMarkers(lat=28.651952, lng=	77.231495, popup = "Delhi, India")
+
+
+my_map
+```
+
+
